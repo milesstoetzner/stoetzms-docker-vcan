@@ -19,4 +19,4 @@ echo Started can2udp
 
 # Listening on vcan
 echo Listening on vcan
-candump "$VCAN_INTERFACE"
+exec candump "$VCAN_INTERFACE"
