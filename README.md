@@ -8,7 +8,7 @@ In our demo we start the containers on the same docker engine and use `candump` 
 
 We assume that
 - ports 6001 and 6002 are available
-- that docker engine is running under 172.17.0.1
+- that the docker engine is reachable under `host.docker.internal`, which `docker-compose.yaml` maps to the host gateway
 
 Note, since we initialize the CAN inside the container the NET_ADMIN capability is required.
 
