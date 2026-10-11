@@ -1,7 +1,7 @@
 # Docker Virtual CAN
 
 Simple demo that connects two applications running in different containers on different hosts via a virtual CAN.
-In a nutshell, each container initializes a virtual CAN und starts a [can2udp](https://opensource.lely.com/canopen/docs/can2udp) process.
+In a nutshell, each container initializes a virtual CAN and starts a [can2udp](https://opensource.lely.com/canopen/docs/can2udp) process.
 In our demo we start the containers on the same docker engine and use `candump` as dummy application inside the container.
 
 ![Docker Virtual CAN Demo](figure.png)
