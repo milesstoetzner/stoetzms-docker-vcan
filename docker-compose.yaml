@@ -3,17 +3,23 @@ services:
   one:
     build: .
     environment:
+      VCAN_TARGET_IP: host.docker.internal
       VCAN_TARGET_PORT: 6002
     ports:
       - 6001:6000/udp
     cap_add:
       - NET_ADMIN
+    extra_hosts:
+      - host.docker.internal:host-gateway
 
   two:
     build: .
     environment:
+      VCAN_TARGET_IP: host.docker.internal
       VCAN_TARGET_PORT: 6001
     ports:
       - 6002:6000/udp
     cap_add:
       - NET_ADMIN
+    extra_hosts:
+      - host.docker.internal:host-gateway
