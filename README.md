@@ -12,6 +12,9 @@ We assume that
 
 Note, since we initialize the CAN inside the container the NET_ADMIN capability is required.
 
+The virtual CAN is created inside the container, but `vcan` is a kernel module of the host, which the container cannot load.
+Therefore, the host must run Linux and have the `vcan` module loaded, e.g., via `sudo modprobe vcan`.
+
 To start the services and to attach to the logs run the following command.
 ```
 docker-compose up
@@ -22,4 +25,5 @@ You can send a message on one of the local CANs as follows.
 docker-compose exec one cansend vcan0 01a#11223344AABBCCDD
 ```
 
-Note, this example does NOT WORK on Windows using WSL backend since there is no support for SocketCAN, see https://github.com/microsoft/WSL/issues/5533.
+Note, this example does NOT WORK with Docker Desktop on macOS or on Windows using WSL backend since their kernels do not support SocketCAN, see https://github.com/microsoft/WSL/issues/5533.
+Use a Linux host or a Linux VM instead.
