@@ -1,8 +1,6 @@
 services:
   one:
     build: .
-    image: docker-vcan
-    pull_policy: build
     environment:
       VCAN_TARGET_IP: host.docker.internal
       VCAN_TARGET_PORT: 6002
@@ -16,8 +14,6 @@ services:
 
   two:
     build: .
-    image: docker-vcan
-    pull_policy: build
     environment:
       VCAN_TARGET_IP: host.docker.internal
       VCAN_TARGET_PORT: 6001
