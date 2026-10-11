@@ -7,6 +7,7 @@ services:
       VCAN_TARGET_PORT: 6002
     ports:
       - 6001:6000/udp
+    init: true
     cap_add:
       - NET_ADMIN
     extra_hosts:
@@ -19,6 +20,7 @@ services:
       VCAN_TARGET_PORT: 6001
     ports:
       - 6002:6000/udp
+    init: true
     cap_add:
       - NET_ADMIN
     extra_hosts:
