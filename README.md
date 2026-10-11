@@ -14,6 +14,7 @@ Note, since we initialize the CAN inside the container the NET_ADMIN capability 
 
 The virtual CAN is created inside the container, but `vcan` is a kernel module of the host, which the container cannot load.
 Therefore, the host must run Linux and have the `vcan` module loaded, e.g., via `sudo modprobe vcan`.
+On Ubuntu cloud images, the module is not installed by default but is part of the `linux-modules-extra-$(uname -r)` package.
 
 To start the services and to attach to the logs run the following command.
 ```
